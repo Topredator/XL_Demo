@@ -17,6 +17,7 @@ static const NSInteger tagNum = 1000;
 @property (nonatomic, strong) UIScrollView *myScroll;
 @property (nonatomic, strong) NSMutableArray *dataArr;
 @property (nonatomic, strong) UIPageControl *pageControll;
+@property (nonatomic, strong) NSTimer *scrollTime;
 @end
 
 @implementation BlockViewController
@@ -25,9 +26,16 @@ static const NSInteger tagNum = 1000;
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    WS(vs);
     [self.view addSubview:self.myScroll];
+    [self.view addSubview:self.pageControll];
     [_myScroll mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.mas_equalTo(UIEdgeInsetsZero);
+    }];
+    [_pageControll mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.and.right.equalTo(@0);
+        make.height.equalTo(@40);
+        make.bottom.equalTo(vs.view.mas_bottom).offset(-40);
     }];
     
 }
@@ -37,13 +45,35 @@ static const NSInteger tagNum = 1000;
     [self customMethod];
     
     [self xl_LoadUI];
+    [self xl_setScrollTimer];
 }
 #pragma mark - scrollview delegate -
+- (void)scrollViewWillBeginDragging:(UIScrollView *)scrollView
+{
+    [self.scrollTime invalidate];
+    self.scrollTime = nil;
+}
+- (void)scrollViewDidEndDragging:(UIScrollView *)scrollView willDecelerate:(BOOL)decelerate
+{
+    [self xl_setScrollTimer];
+}
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
     [self xl_InfiniteShuffling];
+    [self xl_DealPageCurrent];
 }
 #pragma mark - private method - 
+- (void)xl_setScrollTimer
+{
+    self.scrollTime = [NSTimer timerWithTimeInterval:2.0 target:self selector:@selector(xl_SrollAgain) userInfo:nil repeats:YES];
+    [[NSRunLoop currentRunLoop] addTimer:_scrollTime forMode:NSRunLoopCommonModes];
+}
+- (void)xl_SrollAgain
+{
+    [self.myScroll setContentOffset:CGPointMake(self.myScroll.contentOffset.x + kScreenWidth, 0) animated:YES];
+    [self xl_InfiniteShuffling];
+    [self xl_DealPageCurrent];
+}
 - (void)customMethod
 {
     static int static_k = 3;
@@ -75,6 +105,17 @@ static const NSInteger tagNum = 1000;
     [self.myScroll setContentSize:CGSizeMake(kScreenWidth * (self.dataArr.count + 2), 0)];
     [self.myScroll setContentOffset:CGPointMake(kScreenWidth, 0) animated:NO];
 }
+- (void)xl_DealPageCurrent
+{
+    int intX = self.myScroll.contentOffset.x / kScreenWidth;
+    if (intX == 1)
+        self.pageControll.currentPage = 0;
+    else if (intX == self.dataArr.count)
+        self.pageControll.currentPage = self.dataArr.count;
+    else
+        self.pageControll.currentPage = intX - 1;
+}
+//  无线轮播
 - (void)xl_InfiniteShuffling
 {
     if (self.myScroll.contentOffset.x == 0) {
@@ -113,6 +154,10 @@ static const NSInteger tagNum = 1000;
 {
     if (!_pageControll) {
         UIPageControl *page = [UIPageControl new];
+        page.numberOfPages = self.dataArr.count;
+        page.pageIndicatorTintColor = [UIColor whiteColor];
+        page.currentPageIndicatorTintColor = [UIColor blackColor];
+        _pageControll = page;
     }
     return _pageControll;
 }
