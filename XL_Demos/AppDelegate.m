@@ -42,7 +42,7 @@ void UncaughtExceptionHandler(NSException *exception)
     // Override point for customization after application launch.
     //  JSPatch
     //  --------------------------------- JSPatch test 的分割线 ----------------------------------- //
-        [JSPatch testScriptInBundle];
+//        [JSPatch testScriptInBundle];
     //  ----------------------------------- 分割线结束 ------------------------------------- //
     
     //  --------------------------------- JSPatch 线上 的分割线 ----------------------------------- //
