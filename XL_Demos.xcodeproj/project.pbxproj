@@ -75,6 +75,11 @@
 		EB479D6E1D8812B800BCA38C /* image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = EB479D6D1D8812B800BCA38C /* image.jpg */; };
 		EB4BF1E91D45E88700941FF2 /* SpeedDial.m in Sources */ = {isa = PBXBuildFile; fileRef = EB4BF1E81D45E88700941FF2 /* SpeedDial.m */; };
 		EB5853A51D791F57002F8653 /* DMShopCar.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5853A41D791F57002F8653 /* DMShopCar.m */; };
+		EB5BA9611DC19BB4009490A2 /* JSPatchPlatform.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BA9601DC19BB4009490A2 /* JSPatchPlatform.framework */; };
+		EB5BA9631DC19BC2009490A2 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB5BA9621DC19BC2009490A2 /* WebKit.framework */; };
+		EB5BA96C1DC19BF1009490A2 /* NJKWebViewProgressView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA9691DC19BF1009490A2 /* NJKWebViewProgressView.m */; };
+		EB5BA96D1DC19BF1009490A2 /* ZXLWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = EB5BA96B1DC19BF1009490A2 /* ZXLWebView.m */; };
+		EB5BA96F1DC19CAB009490A2 /* main.js in Resources */ = {isa = PBXBuildFile; fileRef = EB5BA96E1DC19CAB009490A2 /* main.js */; };
 		EB6253F61D7404DA008F39FF /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = EB6253F51D7404DA008F39FF /* BlockViewController.m */; };
 		EB67CF261D4A486E00D6C2A9 /* appicon120.png in Resources */ = {isa = PBXBuildFile; fileRef = EB67CF251D4A486E00D6C2A9 /* appicon120.png */; };
 		EB67E7CA1D925DB4004C5F24 /* NSURL+XL_URLQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = EB67E7C91D925DB4004C5F24 /* NSURL+XL_URLQuery.m */; };
@@ -414,6 +419,13 @@
 		EB4BF1E81D45E88700941FF2 /* SpeedDial.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpeedDial.m; sourceTree = "<group>"; };
 		EB5853A31D791F57002F8653 /* DMShopCar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMShopCar.h; sourceTree = "<group>"; };
 		EB5853A41D791F57002F8653 /* DMShopCar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DMShopCar.m; sourceTree = "<group>"; };
+		EB5BA9601DC19BB4009490A2 /* JSPatchPlatform.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = JSPatchPlatform.framework; sourceTree = "<group>"; };
+		EB5BA9621DC19BC2009490A2 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		EB5BA9681DC19BF1009490A2 /* NJKWebViewProgressView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NJKWebViewProgressView.h; sourceTree = "<group>"; };
+		EB5BA9691DC19BF1009490A2 /* NJKWebViewProgressView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NJKWebViewProgressView.m; sourceTree = "<group>"; };
+		EB5BA96A1DC19BF1009490A2 /* ZXLWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZXLWebView.h; sourceTree = "<group>"; };
+		EB5BA96B1DC19BF1009490A2 /* ZXLWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZXLWebView.m; sourceTree = "<group>"; };
+		EB5BA96E1DC19CAB009490A2 /* main.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = main.js; sourceTree = "<group>"; };
 		EB6253F41D7404DA008F39FF /* BlockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockViewController.h; sourceTree = "<group>"; };
 		EB6253F51D7404DA008F39FF /* BlockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockViewController.m; sourceTree = "<group>"; };
 		EB67CF251D4A486E00D6C2A9 /* appicon120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appicon120.png; sourceTree = "<group>"; };
@@ -754,12 +766,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB5BA9631DC19BC2009490A2 /* WebKit.framework in Frameworks */,
 				EB687BE71D93B52300DD8786 /* AVFoundation.framework in Frameworks */,
 				EB7D16D61D76A6150075ACEC /* libz.tbd in Frameworks */,
 				EB7D16D41D76A60E0075ACEC /* libsqlite3.tbd in Frameworks */,
 				EB7D16D21D76A6050075ACEC /* SystemConfiguration.framework in Frameworks */,
 				EB7D16D01D76A5FC0075ACEC /* MobileCoreServices.framework in Frameworks */,
 				EB7D16CE1D76A5F40075ACEC /* Accelerate.framework in Frameworks */,
+				EB5BA9611DC19BB4009490A2 /* JSPatchPlatform.framework in Frameworks */,
 				EB7D16CC1D76A5EC0075ACEC /* AssetsLibrary.framework in Frameworks */,
 				EB7D16CA1D76A5E30075ACEC /* ImageIO.framework in Frameworks */,
 				EB7D16C81D76A5DC0075ACEC /* QuartzCore.framework in Frameworks */,
@@ -1194,6 +1208,42 @@
 				EB5853A41D791F57002F8653 /* DMShopCar.m */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		EB5BA9641DC19BF1009490A2 /* WKWeb */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BA9651DC19BF1009490A2 /* Controllers */,
+				EB5BA9661DC19BF1009490A2 /* Models */,
+				EB5BA9671DC19BF1009490A2 /* Views */,
+			);
+			name = WKWeb;
+			path = ../WKWeb;
+			sourceTree = "<group>";
+		};
+		EB5BA9651DC19BF1009490A2 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		EB5BA9661DC19BF1009490A2 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		EB5BA9671DC19BF1009490A2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				EB5BA9681DC19BF1009490A2 /* NJKWebViewProgressView.h */,
+				EB5BA9691DC19BF1009490A2 /* NJKWebViewProgressView.m */,
+				EB5BA96A1DC19BF1009490A2 /* ZXLWebView.h */,
+				EB5BA96B1DC19BF1009490A2 /* ZXLWebView.m */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EB6253F11D740496008F39FF /* Block */ = {
@@ -1683,6 +1733,7 @@
 		EB8899F41D17D0A000C12AFC /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				EB5BA96E1DC19CAB009490A2 /* main.js */,
 				EB447DC41D38EC4700633F4A /* data.json */,
 				EB8899F51D17D0A000C12AFC /* main.m */,
 				EB889A401D17D37300C12AFC /* XL_DemoPrefixHeader.pch */,
@@ -1747,6 +1798,7 @@
 		EB889A2B1D17D2BA00C12AFC /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EB5BA9641DC19BF1009490A2 /* WKWeb */,
 				EB17AE381D9BA40C003FDD3E /* ClickAnimated */,
 				EB67E7CF1D92A0E9004C5F24 /* TVPlayer */,
 				EB479D5D1D87F83500BCA38C /* DrawCell */,
@@ -2028,6 +2080,8 @@
 		EBDF59DA1D77C8FF008B4C93 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EB5BA9621DC19BC2009490A2 /* WebKit.framework */,
+				EB5BA9601DC19BB4009490A2 /* JSPatchPlatform.framework */,
 				EB687BE61D93B52300DD8786 /* AVFoundation.framework */,
 				EB7D16D51D76A6150075ACEC /* libz.tbd */,
 				EB7D16D31D76A60E0075ACEC /* libsqlite3.tbd */,
@@ -2265,6 +2319,7 @@
 				EB7A2CA51D40AF3F00B6B38A /* File@2x.png in Resources */,
 				EBE9E32F1D3B3A9200DAB71D /* sunnyxx@2x.png in Resources */,
 				EBDF59E31D78054E008B4C93 /* unchecked@2x.png in Resources */,
+				EB5BA96F1DC19CAB009490A2 /* main.js in Resources */,
 				EB479D6E1D8812B800BCA38C /* image.jpg in Resources */,
 				EBE9E32E1D3B3A9200DAB71D /* sinojerk@2x.png in Resources */,
 				EBB450BE1D954D1D00C775BF /* chenyifaer.mp4 in Resources */,
@@ -2365,6 +2420,7 @@
 				EBDF59E81D780F74008B4C93 /* NSString+JsonKit.m in Sources */,
 				EB447DBA1D38E24200633F4A /* UITableView+FDIndexPathHeightCache.m in Sources */,
 				EB7D16841D76A5180075ACEC /* UIImage+YYAdd.m in Sources */,
+				EB5BA96C1DC19BF1009490A2 /* NJKWebViewProgressView.m in Sources */,
 				EB7A2CA91D40B15700B6B38A /* FileViewController.m in Sources */,
 				EB2B28F21D2F8C6A001362A1 /* XL_FactoryViewController.m in Sources */,
 				EB25A0B21D348C1B00889626 /* XLTabbarSelectTransition.m in Sources */,
@@ -2398,6 +2454,7 @@
 				EB7D16B51D76A5180075ACEC /* YYKeychain.m in Sources */,
 				EB2B289E1D2E045B001362A1 /* MASConstraint.m in Sources */,
 				EB7D16A81D76A5180075ACEC /* UIPasteboard+YYText.m in Sources */,
+				EB5BA96D1DC19BF1009490A2 /* ZXLWebView.m in Sources */,
 				EB7D168B1D76A5180075ACEC /* YYDiskCache.m in Sources */,
 				EB7A2C901D407E1A00B6B38A /* XL_CompositeViewController.m in Sources */,
 				EBDF345E1D3CB81D00B84764 /* XL_SpeedDialViewController.m in Sources */,
@@ -2648,6 +2705,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: NING ZHANG (9WKCGXC5Z4)";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XL_Demos/XL_DemoPrefixHeader.pch";
 				INFOPLIST_FILE = XL_Demos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -2664,6 +2725,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer: NING ZHANG (9WKCGXC5Z4)";
 				ENABLE_STRICT_OBJC_MSGSEND = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Frameworks",
+				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/XL_Demos/XL_DemoPrefixHeader.pch";
 				INFOPLIST_FILE = XL_Demos/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

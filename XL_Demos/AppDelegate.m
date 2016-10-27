@@ -16,6 +16,13 @@
 
 #import "HomeViewController.h"
 
+static NSString *const kJSPatchPublicKey = @"-----BEGIN PUBLIC KEY-----\n \
+MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDKO/7h4WgQxahHfNqF8ofBdQgZ\n \
+1YvZ3uuQ6A624mlFlPgwOn0YNeCjRDYLTBz0fse4a1yc1S4yQyBHBHxP+8sDEGCQ\n \
+twc5/KoFJ14EmteIUcGWflsWe1Gd656T17Fg0YU7EoDAIGLblYpBzaDQ25U2sbif\n \
+d7iExW3UZeCZodqLJQIDAQAB\n \
+-----END PUBLIC KEY-----";
+
 @interface AppDelegate ()
 
 @end
@@ -33,10 +40,25 @@ void UncaughtExceptionHandler(NSException *exception)
 }
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    //  JSPatch
+    //  --------------------------------- JSPatch test 的分割线 ----------------------------------- //
+        [JSPatch testScriptInBundle];
+    //  ----------------------------------- 分割线结束 ------------------------------------- //
+    
+    //  --------------------------------- JSPatch 线上 的分割线 ----------------------------------- //
+    //    [JSPatch startWithAppKey:@"4570557055ed8add"];
+    //    [JSPatch setupRSAPublicKey:kJSPatchPublicKey];
+    //#ifdef DEBUG
+    //    [JSPatch setupDevelopment];
+    //#endif
+    //    [JSPatch sync];
+    //    [JSPatch setupLogger:^(NSString *msg) {
+    //        NSLog(@"%@", msg);
+    //    }];
+    //  ----------------------------------- 分割线结束 ------------------------------------- //
+    
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     _window.backgroundColor = [UIColor whiteColor];
-    
-    
     NSArray *classNames = @[@"RootViewController", @"HomeViewController"];
     NSArray *titles = @[@"Root", @"Home"];
     NSMutableArray *viewControllers = [NSMutableArray arrayWithCapacity:classNames.count];

@@ -20,4 +20,5 @@
 #import "NSString+Extension.h"
 #import "NSString+JsonKit.h"
 #import "YYKit.h"
+#import <JSPatchPlatform/JSPatch.h>
 #endif /* XL_DemoPrefixHeader_pch */
